@@ -1,10 +1,21 @@
 <?php get_header(); ?>
 <section id="content" role="main">
+<?php $last_heading = null;?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php comments_template(); ?>
+<?php $heading = date('F Y',strtotime($post->post_date));
+if($last_heading!=$heading){
+if($last_heading!=null){
+	echo '</ul>';
+}
+echo '<h2>'.$heading.'</h2><ul>';
+$last_heading = $heading;
+}
+?>
+<li>
+<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+</li>
 <?php endwhile; endif; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
+<?php if($last_heading!=null){echo '</ul>';} ?>
 </section>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,0 +1,40 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "futura-pt",sans-serif;
+}
+body{
+font-family: "minion-pro",serif;
+font-size:17px;
+line-height:23px;
+}
+
+p {
+  font-size:17px;
+  text-align:justify;
+  margin-bottom:23px;
+}
+
+article h1{
+font-size:34px;
+line-height:46px;
+}
+
+article header{
+	margin-bottom:30px;
+}
+article header time{
+	font-size:14px;
+	line-height:18px;
+	font-family: "futura-pt",sans-serif;
+}
+
+#container{
+margin: 0 auto;
+width:460px;
+}

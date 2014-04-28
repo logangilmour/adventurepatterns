@@ -64,3 +64,11 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+function  arch( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+
+	$query->set( 'posts_per_page', -1 );
+    }
+}
+add_action( 'pre_get_posts', 'arch' );
