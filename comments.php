@@ -7,14 +7,14 @@ $comments_by_type = &separate_comments( $comments );
 if ( ! empty( $comments_by_type['comment'] ) ) : 
 ?>
 <section id="comments-list" class="comments">
-<h3 class="comments-title"><?php comments_number(); ?></h3>
+
 <?php if ( get_comment_pages_count() > 1 ) : ?>
 <nav id="comments-nav-above" class="comments-navigation" role="navigation">
 <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
 </nav>
 <?php endif; ?>
 <ul>
-<?php wp_list_comments( 'type=comment' ); ?>
+<?php wp_list_comments( 'type=comment&callback=mytheme_comment'); ?>
 </ul>
 <?php if ( get_comment_pages_count() > 1 ) : ?>
 <nav id="comments-nav-below" class="comments-navigation" role="navigation">
@@ -36,6 +36,15 @@ $ping_count = count( $comments_by_type['pings'] );
 <?php 
 endif; 
 endif;
-if ( comments_open() ) comment_form();
+if ( comments_open() ) comment_form(array(
+        // change the title of send button 
+        'label_submit'=>'Send',
+        // change the title of the reply section
+        'title_reply'=>'',
+        // remove "Text or HTML to be displayed after the set of comment fields"
+        'comment_notes_after' => '',
+	'comment_notes_before' => ''
+        // redefine your own textarea (the comment body)
+        ));
 ?>
 </section>
