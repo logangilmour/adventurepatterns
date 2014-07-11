@@ -5,9 +5,72 @@
 
 @import "compass/reset";
 
+$highlight: #CC000F;
+
 h1, h2, h3, h4, h5, h6 {
 font-family: "futura-pt",sans-serif;
 }
+
+em {
+font-style:italic;
+}
+
+blockquote{
+font-style:italic;
+}
+
+.footnote-identifier-link{
+text-decoration:none;
+}
+
+li.footnote{
+color:#000;
+font-size:14px;
+line-height:23px;
+}
+
+h2{
+font-size:24px;
+line-height:23px;
+padding-top:10px;
+padding-bottom:13px;
+}
+
+h3{
+font-weight:bold;
+font-size:17px;
+padding-top:13px;
+line-height:17px;
+padding-bottom:10px;
+text-transform:uppercase;
+}
+
+#content ul, ol{
+padding-bottom:23px;
+}
+
+#content.archive ul{
+padding-bottom:0px;
+}
+
+#branding{
+text-align:center;
+padding-top:23px;
+}
+
+#branding a, #branding a:visited{
+width:50px;
+height:50px;
+margin:0 auto;
+display:block;
+background:url('../images/logo.png') no-repeat;
+background-position:0px -50px;
+}
+
+#branding a:hover, #branding a:active{
+background-position:0px 0px;
+}
+
 body{
 font-family: "minion-pro",serif;
 font-size:17px;
@@ -19,7 +82,7 @@ color:#000;
 }
 a:active, a:hover{
 text-decoration:none;
-color:#ff0000;
+color:$highlight;
 }
 
 p {
@@ -28,10 +91,25 @@ p {
   margin-bottom:23px;
 }
 
+.comments p{
+  font-style:italic;
+}
+
+#content .comments ul{
+  padding-bottom:0;
+}
+
+li.comment{
+padding-bottom:23px;
+}
+body.page article h1{
+text-align:center;
+}
 article h1{
-font-size:34px;
+font-size:38px;
 line-height:46px;
 }
+
 
 article header{
 	margin-top:23px;
@@ -57,6 +135,10 @@ text-align:center;
 body.home #content li{
 font-size:14px;
 }
+
+body.home #content ul{
+margin-left:0;
+}
 body.home #content li a{
 text-decoration:none;
 }
@@ -64,10 +146,10 @@ body.home #content li a:hover{
 text-decoration:underline;
 }
 
-h2{
-font-size:21px;
-line-height:21px;
-margin-top:25px;
+.archive h2{
+line-height:26px;
+padding-top:20px;
+padding-bottom:0px;
 }
 #content{
 padding:0 10px 46px 10px;
@@ -82,9 +164,7 @@ max-width:460px;
 
 #menu{
 text-align:center;
-padding-top: 35px;
-margin-bottom:12px;
-padding-bottom:11px;
+padding-top: 23px;
 border-bottom: #000 solid 1px;
 width:95%;
 margin:0 auto;
@@ -92,6 +172,7 @@ margin:0 auto;
 #menu li{
 display:inline-block;
 margin:0 12px;
+padding-bottom:11px;
 font-family:"futura-pt",sans-serif;
 }
 #menu li a{
@@ -112,21 +193,11 @@ display:none;
 #site-title a{
 text-decoration:none;
 }
-body.home #site-title{
-	  display:block;
-	  font-size:68px;
-	  line-height:69px;
-	  letter-spacing:7px;
-	  padding-left:10px;
-}
-body.home #menu{
-padding-top:8px;
-}
 ::selection {
-	    background: #ff0000; /* Safari */
+	    background: $highlight; /* Safari */
 	    }
 ::-moz-selection {
-		 background: #ff0000; /* Firefox */
+		 background: $highlight; /* Firefox */
 }
 
 

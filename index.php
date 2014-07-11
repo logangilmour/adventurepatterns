@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="content" role="main">
+<section id="content" class="archive" role="main">
 <?php $last_heading = null;?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php $heading = date('F Y',strtotime($post->post_date));

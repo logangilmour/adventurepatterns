@@ -21,19 +21,7 @@ function blankslate_enqueue_comment_reply_script()
 {
 if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 }
-add_filter( 'the_title', 'blankslate_title' );
-function blankslate_title( $title ) {
-if ( $title == '' ) {
-return '&rarr;';
-} else {
-return $title;
-}
-}
-add_filter( 'wp_title', 'blankslate_filter_wp_title' );
-function blankslate_filter_wp_title( $title )
-{
-return $title . esc_attr( get_bloginfo( 'name' ) );
-}
+
 add_action( 'widgets_init', 'blankslate_widgets_init' );
 function blankslate_widgets_init()
 {
